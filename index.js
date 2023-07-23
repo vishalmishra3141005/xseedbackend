@@ -12,11 +12,13 @@ const app = express();
 
 const PORT = 3000;
 
+app.use(express.urlencoded({extended: true}));
+
 app.use(cors({
-    origin: "*"
+    origin: "*",
 }));
 
-app.use(express.urlencoded({extended: true}));
+
 app.use("/", require("./routes"));
 
 

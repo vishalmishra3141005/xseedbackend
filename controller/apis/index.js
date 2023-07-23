@@ -27,6 +27,7 @@ module.exports.signUpController = async function(req, res) {
     const email = req.body.email;
     const password = req.body.password;
 
+    console.log(req.body);
     try {
         const user = await User.findOne({email: email, password: password}).exec();
         if (user) {
